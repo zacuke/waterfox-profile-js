@@ -1,9 +1,9 @@
 {
-  "name": "firefox-profile",
+  "name": "waterfox-profile",
   "version": "4.7.0",
-  "description": "firefox profile for selenium WebDriverJs, admc/wd or any other node selenium driver that supports capabilities",
-  "main": "lib/firefox_profile",
-  "types": "lib/firefox_profile.d.ts",
+  "description": "waterfox profile for selenium WebDriverJs, admc/wd or any other node selenium driver that supports capabilities",
+  "main": "lib/waterfox_profile",
+  "types": "lib/waterfox_profile.d.ts",
   "directories": {
     "test": "test"
   },
@@ -11,28 +11,28 @@
     "test": "grunt travis",
     "blanket": {
       "pattern": [
-        "/lib/firefox_profile"
+        "/lib/waterfox_profile"
       ]
     }
   },
   "bin": {
-    "firefox-profile": "./lib/cli.js"
+    "waterfox-profile": "./lib/cli.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/saadtazi/firefox-profile-js.git"
+    "url": "git://github.com/saadtazi/waterfox-profile-js.git"
   },
   "keywords": [
     "selenium",
     "webdriver",
-    "firefox",
-    "firefox profile",
+    "waterfox",
+    "waterfox profile",
     "nodejs"
   ],
   "author": "Saad Tazi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saadtazi/firefox-profile-js/issues"
+    "url": "https://github.com/saadtazi/waterfox-profile-js/issues"
   },
   "contributors": [
     {

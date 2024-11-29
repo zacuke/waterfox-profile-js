@@ -1,13 +1,13 @@
-var FirefoxProfile,
+var WaterfoxProfile,
 wd = require('wd');
 try {
- FirefoxProfile = require('../lib/firefox_profile');
+ WaterfoxProfile = require('../lib/waterfox_profile');
 } catch (e) {
-  FirefoxProfile = require('firefox-profile');
+  WaterfoxProfile = require('waterfox-profile');
 }
 // set some userPrefs if needed
 // Note: make sure you call encoded() after setting some userPrefs
-var fp = new FirefoxProfile();
+var fp = new WaterfoxProfile();
 // activate and open firebug by default for all sites
 // activate the console panel
 
@@ -40,18 +40,18 @@ fp.encoded(function(err, zippedProfile) {
     // pathname: '/' // if you use geckodriver directly (without selenium server)
   }, 'promiseChain');
   browser.init({
-      browserName:'firefox',
-      marionette: true, // firefox 47+
-      'moz:firefoxOptions': {
-          // set firefox profile capabilities HERE!!!!
+      browserName:'waterfox',
+      marionette: true, // waterfox 47+
+      'moz:waterfoxOptions': {
+          // set waterfox profile capabilities HERE!!!!
           profile: zippedProfile
         }
       })
-      // NOTE: for non-geckodriver user with firefox 46 or older
+      // NOTE: for non-geckodriver user with waterfox 46 or older
       // the capability needs to be something like:
       // {
-      //   browserName:'firefox',
-      //   firefox_profile: zippedProfile
+      //   browserName:'waterfox',
+      //   waterfox_profile: zippedProfile
       // }
 
       // woOot!!

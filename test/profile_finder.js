@@ -44,10 +44,10 @@ describe('profile_finder', function () {
     var tests = [
       {
         platform: 'darwin',
-        endsWith: /\/Library\/Application Support\/Firefox$/,
+        endsWith: /\/Library\/Application Support\/Waterfox$/,
       },
-      { platform: 'linux', endsWith: /\/.config\/mozilla\/firefox$/ },
-      { platform: 'win32', endsWith: /\/Mozilla\/Firefox$/ },
+      { platform: 'linux', endsWith: /\/.config\/mozilla\/waterfox$/ },
+      { platform: 'win32', endsWith: /\/Mozilla\/Waterfox$/ },
     ];
     tests.forEach(function (test) {
       it('should return path to user profile', function () {

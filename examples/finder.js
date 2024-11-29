@@ -1,18 +1,18 @@
-var FirefoxProfile;
+var WaterfoxProfile;
 try {
-  FirefoxProfile = require('../lib/firefox_profile');
+  WaterfoxProfile = require('../lib/waterfox_profile');
 } catch(e) {
-  FirefoxProfile = require('firefox-profile');
+  WaterfoxProfile = require('waterfox-profile');
 }
 
-// var t = new FirefoxProfile.Finder();
+// var t = new WaterfoxProfile.Finder();
 // t.readProfiles(function() {
 //   console.log(t.profiles);
 //   console.log('>> ', t.getPath('default'));
 //   console.log('>> ', t.getPath('test-ext-user'));
 // });
 
-FirefoxProfile.copyFromUserProfile({name: 'test-ext-user'}, function(err, profile) {
+WaterfoxProfile.copyFromUserProfile({name: 'test-ext-user'}, function(err, profile) {
   console.log(profile.profileDir);
   // profile.shouldDeleteOnExit(false);
 });

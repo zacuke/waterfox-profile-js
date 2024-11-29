@@ -1,4 +1,18 @@
-# firefox-profile-js
+Waterfox conversion steps:
+* Case sensitive Search and replace
+  * `Firefox` to `Waterfox`
+  * `firefox` to `waterfox`
+* Rollback the docs
+  * `git restore '*.md'`
+* Rename folder and files
+  * `./doc/firefox_profile.md` to `./doc/waterfox_profile.md`
+  * `./firefox-profile.sublime-project` to `./waterfox-profile.sublime-project`
+  * `./test/firefox_profile.js` to `./test/waterfox_profile.js`
+  * `./lib/firefox_profile.js` to `./lib/waterfox_profile.js`
+  * `./lib/firefox_profile.d.ts` to `./lib/waterfox_profile.d.ts`
+
+  
+ # firefox-profile-js
 
 [![Build Status](https://travis-ci.org/saadtazi/firefox-profile-js.png)](https://travis-ci.org/saadtazi/firefox-profile-js)
 [![Coverage Status](https://coveralls.io/repos/saadtazi/firefox-profile-js/badge.png)](https://coveralls.io/r/saadtazi/firefox-profile-js)

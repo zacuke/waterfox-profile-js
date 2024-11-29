@@ -5,7 +5,7 @@
 var wd = require('wd'),
   request = require('request'),
   browser,
-  FirefoxProfile = require('../../lib/firefox_profile'),
+  WaterfoxProfile = require('../../lib/waterfox_profile'),
   testProfiles = require('../test_profiles');
 
 var username = process.env.SAUCE_USERNAME || 'SAUCE_USERNAME',
@@ -41,8 +41,8 @@ function sendStatusToSauceLabs(sessionID, passed, cb) {
 describe.skip('install extension', function () {
   this.timeout(120000);
 
-  it('should be able to install an extension in firefox and run firebug-specific javascript', function (done) {
-    var fp = new FirefoxProfile(),
+  it('should be able to install an extension in waterfox and run firebug-specific javascript', function (done) {
+    var fp = new WaterfoxProfile(),
       testProfile = testProfiles.profileWithFirebug;
     fp.setPreference('extensions.firebug.allPagesActivation', 'on');
     fp.setPreference('extensions.firebug.console.enableSites', true);
@@ -70,9 +70,9 @@ describe.skip('install extension', function () {
         // });
         browser
           .init({
-            browserName: 'firefox', // latest
-            firefox_profile: zippedProfile,
-            name: 'firefox-profile-js',
+            browserName: 'waterfox', // latest
+            waterfox_profile: zippedProfile,
+            name: 'waterfox-profile-js',
             build: process.env.TRAVIS_JOB_ID,
           })
           .get('http://saadtazi.com')

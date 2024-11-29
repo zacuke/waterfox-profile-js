@@ -5,14 +5,14 @@
 
 const { expect } = require('chai');
 var path = require('path'),
-  FirefoxProfile = require('../lib/firefox_profile'),
+  WaterfoxProfile = require('../lib/waterfox_profile'),
   fs = require('fs');
 
-describe('firefox_profile', function () {
+describe('waterfox_profile', function () {
   var fp;
   beforeEach(function () {
     // default basic profile
-    fp = new FirefoxProfile({});
+    fp = new WaterfoxProfile({});
   });
 
   afterEach(function (done) {
@@ -29,7 +29,7 @@ describe('firefox_profile', function () {
     });
 
     it('with string parameter, lock files should not be copied over', function (done) {
-      var fp = new FirefoxProfile(testProfiles.emptyProfile.path);
+      var fp = new WaterfoxProfile(testProfiles.emptyProfile.path);
       expect(path.basename(fp.profileDir).slice(0, 5)).to.be.equal('copy-');
       expect(fs.statSync(fp.profileDir).isDirectory()).to.be.true;
       ['.parentlock', 'lock', 'parent.lock'].forEach(function (lockFile) {
@@ -40,7 +40,7 @@ describe('firefox_profile', function () {
     });
 
     it('should copy the profile into destinationDirectory if specified', function (done) {
-      var fp = new FirefoxProfile({
+      var fp = new WaterfoxProfile({
         profileDirectory: testProfiles.emptyProfile.path,
         destinationDirectory: testProfiles.dest,
       });
@@ -54,9 +54,9 @@ describe('firefox_profile', function () {
       fp.deleteDir(done);
     });
   });
-  describe('#Firefox.copy', function () {
+  describe('#Waterfox.copy', function () {
     it('lock files should not be copied over', function (done) {
-      FirefoxProfile.copy(testProfiles.emptyProfile.path, function (err, fp) {
+      WaterfoxProfile.copy(testProfiles.emptyProfile.path, function (err, fp) {
         expect(fs.statSync(fp.profileDir).isDirectory()).to.be.true;
         ['.parentlock', 'lock', 'parent.lock'].forEach(function (lockFile) {
           expect(fs.existsSync(path.join(fp.profileDir, lockFile))).to.be.false;
@@ -69,14 +69,14 @@ describe('firefox_profile', function () {
     });
 
     it('should return an error if no profileDirectory is provided', function (done) {
-      FirefoxProfile.copy({ noProfileDirectory: true }, function (err) {
+      WaterfoxProfile.copy({ noProfileDirectory: true }, function (err) {
         expect(err).to.be.an.instanceof(Error);
         done();
       });
     });
 
     it('should copy the profile into destinationDirectory if specified', function (done) {
-      FirefoxProfile.copy(
+      WaterfoxProfile.copy(
         {
           profileDirectory: testProfiles.emptyProfile.path,
           destinationDirectory: testProfiles.dest,
@@ -98,9 +98,9 @@ describe('firefox_profile', function () {
     });
   });
 
-  describe('#Firefox.copyFromUserProfile', function () {
+  describe('#Waterfox.copyFromUserProfile', function () {
     it('lock files should not be copied over', function (done) {
-      FirefoxProfile.copyFromUserProfile(
+      WaterfoxProfile.copyFromUserProfile(
         {
           userProfilePath: __dirname,
           name: 'default',
@@ -121,14 +121,14 @@ describe('firefox_profile', function () {
     });
 
     it('should return an error if no name is provided', function (done) {
-      FirefoxProfile.copyFromUserProfile({ noName: true }, function (err) {
+      WaterfoxProfile.copyFromUserProfile({ noName: true }, function (err) {
         expect(err).to.be.an.instanceof(Error);
         done();
       });
     });
 
     it('should copy the profile into destinationDirectory if specified', function (done) {
-      FirefoxProfile.copyFromUserProfile(
+      WaterfoxProfile.copyFromUserProfile(
         {
           userProfilePath: __dirname,
           name: 'default',

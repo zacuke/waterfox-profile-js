@@ -42,9 +42,9 @@ declare interface AddonDetails {
 	isNative: boolean;
 }
 
-declare class FirefoxProfile {
-	static copy(options: ConstructorOptions | string | null | undefined, cb: (err: Error | null, profile?: FirefoxProfile) => void): void;
-	static copyFromUserProfile(options: CopyFromUserProfileOptions, cb: (err: Error | null, profile?: FirefoxProfile) => void): void;
+declare class WaterfoxProfile {
+	static copy(options: ConstructorOptions | string | null | undefined, cb: (err: Error | null, profile?: WaterfoxProfile) => void): void;
+	static copyFromUserProfile(options: CopyFromUserProfileOptions, cb: (err: Error | null, profile?: WaterfoxProfile) => void): void;
 	static Finder: typeof ProfileFinder;
 	constructor(options?: ConstructorOptions | string);
 	defaultPreferences: any;
@@ -67,4 +67,4 @@ declare class FirefoxProfile {
 	setProxy(proxySettings: ProxySettings): void;
 }
 
-export = FirefoxProfile;
+export = WaterfoxProfile;

@@ -5,7 +5,7 @@ var fs = require('fs'),
     path = require('path'),
     exec = require('child_process').exec;
 
-describe('firefox profile command line interface (CLI)', function() {
+describe('waterfox profile command line interface (CLI)', function() {
   // give some time to execute (mostly because of my poor old slow Mac)
   this.timeout(6000);
 

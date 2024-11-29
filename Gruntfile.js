@@ -41,8 +41,8 @@ module.exports = function (grunt) {
       },
     },
     apidox: {
-      input: "lib/firefox_profile.js",
-      output: "doc/firefox_profile.md",
+      input: "lib/waterfox_profile.js",
+      output: "doc/waterfox_profile.md",
     },
     watch: {
       scripts: {
