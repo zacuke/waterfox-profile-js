@@ -29,10 +29,10 @@
     "waterfox profile",
     "nodejs"
   ],
-  "author": "Saad Tazi",
+  "author": "Lyle Keeton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saadtazi/waterfox-profile-js/issues"
+    "url": "https://github.com/zacuke/waterfox-profile-js/issues"
   },
   "contributors": [
     {
@@ -74,6 +74,10 @@
     {
       "name": "Luca Greco",
       "url": "https://github.com/rpl"
+    },
+    {
+      "name":"Saad Tazi",
+      "url": "https://github.com/saadtazi"
     }
   ],
   "devDependencies": {
